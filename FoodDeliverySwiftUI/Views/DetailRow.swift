@@ -8,32 +8,37 @@
 import SwiftUI
 
 struct DetailRow: View {
+  
+  var food: Food
+  
   var body: some View {
     HStack {
       VStack(alignment:.leading) {
-        Text("BBQ Burger")
+        Text(food.title)
           .font(.headline)
           .padding(.top, /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
-        Text("10.00 $")
+        Text("\(food.price,specifier:"%2.2f")$")
           .font(.caption)
       }
+      Spacer()
       Button(action: {
-        print("Order")
+        print("Order received")
       }, label: {
         Text("ORDER")
           .foregroundColor(.white)
       }
       
+      
       ).frame(width: 80, height: 50)
       .background(Color.orange)
       .cornerRadius(10.0)
-      
+      .padding(20)
     }
   }
 }
 
 struct DetailRow_Previews: PreviewProvider {
   static var previews: some View {
-    DetailRow()
+    DetailRow(food:foodData[0])
   }
 }
