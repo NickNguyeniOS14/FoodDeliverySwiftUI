@@ -8,18 +8,62 @@
 import SwiftUI
 
 struct ContentView: View {
-    var body: some View {
-        Image("burger")
+  
+  
+  
+  var body: some View {
+    List {
+      CategoryView(imageName: "burger", categoryName: "BURGER")
+      CategoryView(imageName: "pizza", categoryName: "PIZZA")
+      CategoryView(imageName: "pasta", categoryName: "PASTA")
+      CategoryView(imageName: "dessert", categoryName: "DESSERTS")
+      
+    }
+    
+  }
+}
+
+
+
+struct CategoryView: View {
+  
+  var imageName: String
+  var categoryName: String
+  
+  var body: some View {
+    HStack {
+      Spacer()
+      ZStack {
+        Image(imageName)
           .resizable()
           .aspectRatio(contentMode: .fill)
           .frame(width: 300, height: 150)
           .clipped()
           .cornerRadius(20.0)
+        Text(categoryName)
+          .font(.custom("HelveticaNeue-Medium",size:50))
+          .foregroundColor(.white)
+      }
+      Spacer()
     }
+    .padding(.top,5)
+    .padding(.bottom, 5)
+   
+  }
 }
 
+
+
+
+
+
+
+
+
+
+
 struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+  static var previews: some View {
+    ContentView()
+  }
 }
