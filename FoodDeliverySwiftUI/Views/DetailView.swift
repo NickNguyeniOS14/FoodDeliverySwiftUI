@@ -18,7 +18,7 @@ struct DetailView: View {
       }
       .navigationBarTitle(Text(categoryString(for: currentCategory)),displayMode: .inline)
       .sheet(isPresented: $showOrderSheet) {
-        OrderForm()
+        OrderForm( showOrderSheet: self.$showOrderSheet)
       }
     }
 }

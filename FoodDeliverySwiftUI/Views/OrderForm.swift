@@ -18,61 +18,72 @@ struct OrderForm: View {
   @State var zip = ""
   @State var userFeedback = 0.0
   
+  @Binding var showOrderSheet: Bool
+  
   var body: some View {
-    Form { // Form is like system's settings app
-      
-      Toggle(isOn: $specialRequests) {
-        Text("Any special requests?")
-      }
-      if specialRequests {
-        TextField("Enter your wishes",text:$specialRequestContent)
-      }
-      Section {
+    NavigationView {
+      Form { // Form is like system's settings app
         
-        Stepper(value:$orderAmount, in: 1...10, label: {
-          Text("Number of items: \(orderAmount)")
-        })
-      }
-      Section {
+        Toggle(isOn: $specialRequests) {
+          Text("Any special requests?")
+        }
+        if specialRequests {
+          TextField("Enter your wishes",text:$specialRequestContent)
+        }
+        Section {
+          
+          Stepper(value:$orderAmount, in: 1...10, label: {
+            Text("Number of items: \(orderAmount)")
+          })
+        }
+        Section {
+          
+          TextField("First name", text: $firstName)
+          TextField("Last name", text: $lastName)
+          TextField("Street address", text: $streetAddress)
+          TextField("City", text: $city)
+          TextField("Zip", text: $zip)
+        }
         
-        TextField("First name", text: $firstName)
-        TextField("Last name", text: $lastName)
-        TextField("Street address", text: $streetAddress)
-        TextField("City", text: $city)
-        TextField("Zip", text: $zip)
-      }
-      
-      Section {
-        VStack {
-          Text("How happy were you with the user experience?")
-            .padding(.top, /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
-          HStack {
-            Image(systemName: "hand.thumbsdown")
-              .resizable()
-              .frame(width:20,height: 20)
-            Slider(value: $userFeedback,in:0.0 ... 10.0)
-            Image(systemName: "hand.thumbsup")
-              .resizable()
-              .frame(width:20,height: 20)
+        Section {
+          VStack {
+            Text("How happy were you with the user experience?")
+              .padding(.top, /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
+            HStack {
+              Image(systemName: "hand.thumbsdown")
+                .resizable()
+                .frame(width:20,height: 20)
+              Slider(value: $userFeedback,in:0.0 ... 10.0)
+              Image(systemName: "hand.thumbsup")
+                .resizable()
+                .frame(width:20,height: 20)
+            }
           }
         }
+        
+        Section {
+          Button(action: {
+            print("Placed")
+          }, label: {
+            Text("Place order")
+          })
+        }
+        
+        
       }
-      
-      Section {
-        Button(action: {
-          print("Placed")
-        }, label: {
-          Text("Place order")
-        })
-      }
-      
-      
+      .navigationBarTitle(Text("Welcome"))
+      .navigationBarItems(leading: Button(action: {
+        self.showOrderSheet = false
+      }, label: {
+      Text("Cancel")
+      }))
     }
+   
   }
 }
 
 struct OrderForm_Previews: PreviewProvider {
   static var previews: some View {
-    OrderForm()
+    OrderForm( showOrderSheet: .constant(false))
   }
 }
