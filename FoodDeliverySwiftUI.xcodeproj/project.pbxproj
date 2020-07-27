@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B6861C2324CEE80B0057A4EE /* OrderForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6861C2224CEE80B0057A4EE /* OrderForm.swift */; };
 		B693D7ED24CE1FD000146D00 /* FoodDeliverySwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B693D7EC24CE1FD000146D00 /* FoodDeliverySwiftUIApp.swift */; };
 		B693D7EF24CE1FD000146D00 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B693D7EE24CE1FD000146D00 /* ContentView.swift */; };
 		B693D7F124CE1FD100146D00 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B693D7F024CE1FD100146D00 /* Assets.xcassets */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B6861C2224CEE80B0057A4EE /* OrderForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderForm.swift; sourceTree = "<group>"; };
 		B693D7E924CE1FD000146D00 /* FoodDeliverySwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodDeliverySwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B693D7EC24CE1FD000146D00 /* FoodDeliverySwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDeliverySwiftUIApp.swift; sourceTree = "<group>"; };
 		B693D7EE24CE1FD000146D00 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 				B693D7EE24CE1FD000146D00 /* ContentView.swift */,
 				B693D81E24CE260900146D00 /* DetailRow.swift */,
 				B693D82024CE3B4900146D00 /* DetailView.swift */,
+				B6861C2224CEE80B0057A4EE /* OrderForm.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 			files = (
 				B693D7EF24CE1FD000146D00 /* ContentView.swift in Sources */,
 				B693D82324CE3BE200146D00 /* Helper.swift in Sources */,
+				B6861C2324CEE80B0057A4EE /* OrderForm.swift in Sources */,
 				B693D82124CE3B4900146D00 /* DetailView.swift in Sources */,
 				B693D81F24CE260900146D00 /* DetailRow.swift in Sources */,
 				B693D7ED24CE1FD000146D00 /* FoodDeliverySwiftUIApp.swift in Sources */,
